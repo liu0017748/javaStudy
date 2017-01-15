@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="book" class="IOCStudy.book" destroy-method="destroy" init-method="init" name="book2,book3">
+        <property name="name" value="liusi"/>
+    </bean>
+    <bean id="lazyInitBean" name="xxx" class="IOCStudy.lazyInitBean" lazy-init="true">
+        <constructor-arg ref="book" />
+        <constructor-arg name="name" value="dada" />
+        <constructor-arg>
+            <list>
+                <value>xiaodada</value>
+                <value>ddddd</value>
+                <value>sssssss</value>
+            </list>
+        </constructor-arg>
+        <property name="name" value="hha" />
+    </bean>
+</beans>

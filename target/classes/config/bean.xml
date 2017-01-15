@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
-    <bean id="book" class="IOCStudy.book" destroy-method="destroy" init-method="init">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="book" class="IOCStudy.book" destroy-method="destroy" init-method="init" name="book2,book3">
         <property name="name" value="liusi"/>
+        <property name="bookSet">
+            <set>
+                <value>book1</value>
+                <value>book2</value>
+                <value>book3</value>
+            </set>
+        </property>
+        <property name="bookList">
+            <list>
+                <value>book4</value>
+                <value>book5</value>
+            </list>
+        </property>
     </bean>
     <bean id="lazyInitBean" name="xxx" class="IOCStudy.lazyInitBean" lazy-init="true">
         <constructor-arg ref="book" />
@@ -17,4 +31,7 @@
         </constructor-arg>
         <property name="name" value="hha" />
     </bean>
+
+    <bean class="IOCStudy.ComPonentScanStudy.CDPlayerConfig"/>
+    <context:component-scan base-package="java" />
 </beans>

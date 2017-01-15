@@ -14,7 +14,7 @@ public class IOC_Spring {
 
     public static void main(String[] args){
 
-        //test();
+        test();
         ApplicationContext context=new ClassPathXmlApplicationContext("config/bean.xml");
 //        book book=(book) context.getBean("book");
         lazyInitBean lazyInitBean=(lazyInitBean)context.getBean("lazyInitBean");
@@ -30,6 +30,7 @@ public class IOC_Spring {
     private static void test(){
         ApplicationContext context=new ClassPathXmlApplicationContext("config/bean.xml");
         book book=(book) context.getBean("book");
+        int i=0;
     }
 
 
