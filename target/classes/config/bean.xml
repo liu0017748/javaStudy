@@ -32,6 +32,6 @@
         <property name="name" value="hha" />
     </bean>
 
-    <bean class="IOCStudy.ComPonentScanStudy.CDPlayerConfig"/>
+    <bean class="IOCStudy.ComPonentScanStudy.XmlInJavaConfig"/>
     <context:component-scan base-package="java" />
 </beans>

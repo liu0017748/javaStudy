@@ -31,4 +31,10 @@ public class javaConfigInXmlTest {
     public void testCompactInit(){
         assertNotNull(compactDisc);
     }
+
+    @Test
+    public void testEnumNull(){
+        testEnum testEnum= IOCStudy.testEnum.enum1;
+        assertNotNull(testEnum);
+    }
 }

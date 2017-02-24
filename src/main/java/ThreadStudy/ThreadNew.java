@@ -2,6 +2,7 @@ package ThreadStudy;
 
 
 import java.util.*;
+import java.util.concurrent.*;
 
 /**
  * Created by liu on 16/12/26.
@@ -22,6 +23,12 @@ public class ThreadNew {
             System.out.println("ThreadB begin.");
             this.runtime=new Date();
             System.out.println("ThreadB end.");
+        }
+    }
+    class CallableThread<T> implements Callable<T>{
+        public T call() throws Exception{
+            T t=null;
+            return  t;
         }
     }
     public void starta(){

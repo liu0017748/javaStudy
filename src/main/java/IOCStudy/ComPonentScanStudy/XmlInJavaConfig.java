@@ -7,6 +7,6 @@ import org.springframework.context.annotation.*;
  */
 @Configuration
 @ComponentScan
-@ImportResource("classpath:config/bean.xml")
+//@ImportResource("classpath:config/bean.xml")
 public class XmlInJavaConfig {
 }
